@@ -1,4 +1,5 @@
 <?php include('includes/header.php');?>
+<?php include('includes/db.php');?>
 <body>
 
     <!-- Navigation -->
@@ -12,11 +13,63 @@
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
-
                 <h1 class="page-header">
                     Page Heading
                     <small>Secondary Text</small>
                 </h1>
+
+                
+                <?php
+				$select = 'SELECT * FROM posts';
+				$query = mysqli_query($connection , $select);
+				
+				while($row = mysqli_fetch_assoc($query)){
+					$post_title = $row['post_title'];
+					$post_author = $row['post_author'];
+					$post_data = $row['post_data'];
+					$post_content = $row['post_content'];
+					$post_img = $row['post_img'];
+//					echo "<h2><a href = '#'>{$post_title}</a></h2>";
+//					echo "<p class = 'lead'> by <a href = '#'>{$post_author}</a></p>";
+//					echo "<p><span class='glyphicon glyphicon-time'></span> posted on {$post_data}</p>";
+//					echo '<hr>';
+////					echo '<img class="img-responsive" src="http://placehold.it/900x300" alt="">';
+//					echo '<img class="img-responsive" src="img/{$post_img}" alt="">';
+//					echo '<hr>';
+//					echo "<p>{$post_content}</p>";
+//					echo "<a class='btn btn-primary' href='#'>Read More <span class='glyphicon glyphicon-chevron-right'></span></a>";
+			?>
+                <h2>
+                    <a href="#"><?php echo $post_title;?></a>
+                </h2>
+                <p class="lead">
+                    by <a href="index.php"><?php echo $post_author;?></a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $post_data;?></p>
+                <hr>
+                <img class="img-responsive" src="img/<?php echo $post_img;?>" alt="" style="border-radius:10px;">
+                <hr>
+                <p><?php echo $post_content;?></p>
+                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>
+				
+							
+										
+													
+																
+																						
+				
+				
+				
+				<?php } ?>
+				
+				
+
+				
+				
+		
+
 
                 <!-- First Blog Post -->
                 <h2>
@@ -34,37 +87,6 @@
 
                 <hr>
 
-                <!-- Second Blog Post -->
-                <h2>
-                    <a href="#">Blog Post Title</a>
-                </h2>
-                <p class="lead">
-                    by <a href="index.php">Start Bootstrap</a>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
-                <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-                <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quasi, fugiat, asperiores harum voluptatum tenetur a possimus nesciunt quod accusamus saepe tempora ipsam distinctio minima dolorum perferendis labore impedit voluptates!</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-                <hr>
-
-                <!-- Third Blog Post -->
-                <h2>
-                    <a href="#">Blog Post Title</a>
-                </h2>
-                <p class="lead">
-                    by <a href="index.php">Start Bootstrap</a>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
-                <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-                <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-                <hr>
 
                 <!-- Pager -->
                 <ul class="pager">
