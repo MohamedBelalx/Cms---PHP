@@ -29,16 +29,7 @@
 					$post_data = $row['post_data'];
 					$post_content = $row['post_content'];
 					$post_img = $row['post_img'];
-//					echo "<h2><a href = '#'>{$post_title}</a></h2>";
-//					echo "<p class = 'lead'> by <a href = '#'>{$post_author}</a></p>";
-//					echo "<p><span class='glyphicon glyphicon-time'></span> posted on {$post_data}</p>";
-//					echo '<hr>';
-////					echo '<img class="img-responsive" src="http://placehold.it/900x300" alt="">';
-//					echo '<img class="img-responsive" src="img/{$post_img}" alt="">';
-//					echo '<hr>';
-//					echo "<p>{$post_content}</p>";
-//					echo "<a class='btn btn-primary' href='#'>Read More <span class='glyphicon glyphicon-chevron-right'></span></a>";
-			?>
+				?>
                 <h2>
                     <a href="#"><?php echo $post_title;?></a>
                 </h2>
@@ -53,15 +44,7 @@
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>
-				
-							
-										
-													
-																
-																						
-				
-				
-				
+		
 				<?php } ?>
 				
 				
